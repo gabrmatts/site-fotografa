@@ -4,12 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Eduarda Fotografia | Portfólio Editorial</title>
+
     <meta name="description" content="Retratos, ensaios e histórias capturados com sensibilidade e autenticidade.">
+
+    <meta name="theme-color" content="#070707">
+
     <link rel="stylesheet" href="css/style.css">
+
     <!-- Tipografia -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
@@ -17,184 +24,681 @@
 
 <body>
 
-    <!-- Header -->
+    <!-- =====================================================
+         HEADER DESKTOP
+    ====================================================== -->
+
     <header id="header">
+
         <div class="header-container">
-            <a href="#hero" class="logo">
+
+            <a href="#hero" class="logo" aria-label="Eduarda Fotografia - Início">
+
                 <img src="img/logo-eduarda-white.png" alt="Eduarda Fotografia" class="logo-white">
+
                 <img src="img/logo-eduarda-dark.png" alt="Eduarda Fotografia" class="logo-dark">
+
             </a>
 
-            <button class="mobile-menu-toggle" aria-label="Abrir menu">
-                <span></span>
-                <span></span>
-            </button>
+            <!-- Navegação desktop -->
+            <nav class="nav-menu" aria-label="Navegação principal">
 
-            <nav class="nav-menu">
                 <ul>
-                    <li><a href="#hero">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#portfolio">Portfólio</a></li>
-                    <li><a href="#contato">Contato</a></li>
+
+                    <li>
+                        <a href="#hero">Início</a>
+                    </li>
+
+                    <li>
+                        <a href="#sobre">Sobre</a>
+                    </li>
+
+                    <li>
+                        <a href="#portfolio">Portfólio</a>
+                    </li>
+
+                    <li>
+                        <a href="#contato">Contato</a>
+                    </li>
+
                 </ul>
+
             </nav>
+
         </div>
+
     </header>
 
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
+
     <main>
-        <!-- Hero Section -->
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
         <section id="hero">
+
             <div class="hero-bg">
+
                 <img src="img/foto Eduarda.png" alt="Eduarda Fotógrafa" class="hero-img">
+
                 <div class="hero-overlay"></div>
+
             </div>
+
+
             <div class="hero-content fade-up">
-                <h1>Fotografia que transforma momentos em memória.</h1>
-                <p>Retratos, ensaios e histórias capturados com sensibilidade e autenticidade.</p>
+
+                <span class="hero-eyebrow">
+                    Fotografia · Retratos · Histórias
+                </span>
+
+                <h1>
+                    Fotografia que transforma momentos em memória.
+                </h1>
+
+                <p>
+                    Retratos, ensaios e histórias capturados com
+                    sensibilidade e autenticidade.
+                </p>
+
+
                 <div class="hero-buttons">
-                    <a href="#portfolio" class="btn btn-primary">Conheça meu trabalho</a>
-                    <a href="#" class="btn btn-secondary whatsapp-link">Entrar em contato</a>
+
+                    <a href="#portfolio" class="btn btn-primary">
+                        Conheça meu trabalho
+                    </a>
+
+                    <a href="#contato" class="btn btn-secondary">
+                        Entrar em contato
+                    </a>
+
                 </div>
+
             </div>
+
+
             <div class="scroll-indicator">
+
                 <span>Scroll</span>
+
                 <div class="line"></div>
+
             </div>
+
         </section>
 
-        <!-- Sobre Section -->
+
+        <!-- =================================================
+             SOBRE
+        ================================================== -->
+
         <section id="sobre" class="section-padding">
+
             <div class="container split-layout">
+
                 <div class="sobre-image fade-up">
-                    <img src="img/foto-profissional-01.jpeg" alt="Sessão fotográfica editorial">
+
+                    <img src="img/foto-profissional-01.jpeg" alt="Sessão fotográfica editorial" loading="lazy">
+
                 </div>
+
+
                 <div class="sobre-text fade-up delay-1">
-                    <h2>"Cada fotografia é uma forma de guardar aquilo que o tempo não consegue repetir."</h2>
-                    <p>Meu olhar busca a essência de cada história. Mais do que registrar imagens, meu propósito é
-                        capturar a verdade, a elegância e a conexão de cada instante.</p>
-                    <p>Com uma abordagem minimalista e direção sensível, construímos juntos memórias visuais que
-                        transcenderão gerações.</p>
-                    <a href="#" class="link-arrow whatsapp-link">Falar comigo &#8594;</a>
+                    <h2>
+                        "Cada fotografia é uma forma de guardar aquilo
+                        que o tempo não consegue repetir."
+                    </h2>
+
+                    <p>
+                        Meu olhar busca a essência de cada história.
+                        Mais do que registrar imagens, meu propósito é
+                        capturar a verdade, a elegância e a conexão de
+                        cada instante.
+                    </p>
+
+                    <p>
+                        Com uma abordagem minimalista e direção sensível,
+                        construímos juntos memórias visuais que
+                        transcenderão gerações.
+                    </p>
+
+                    <a href="#contato" class="link-arrow">
+                        Falar comigo
+                        <span aria-hidden="true">→</span>
+                    </a>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- Portfolio Section -->
+
+        <!-- =================================================
+             PORTFÓLIO
+        ================================================== -->
+
         <section id="portfolio" class="section-padding bg-light">
+
             <div class="container">
+
                 <div class="portfolio-header fade-up">
-                    <h2>Portfólio</h2>
-                    <p>Alguns momentos que tive o privilégio de registrar.</p>
+
+                    <span class="section-label">
+                        Seleção de trabalhos
+                    </span>
+
+                    <h2>
+                        Portfólio
+                    </h2>
+
+                    <p>
+                        Alguns momentos que tive o privilégio de registrar.
+                    </p>
+
                 </div>
 
-                <div class="portfolio-filters fade-up">
-                    <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="ensaios">Ensaios</button>
-                    <button class="filter-btn" data-filter="familia">Família</button>
-                    <button class="filter-btn" data-filter="profissional">Profissional</button>
+
+                <!-- Filtros -->
+
+                <div class="portfolio-filters fade-up" role="tablist" aria-label="Categorias do portfólio">
+
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+                        Todos
+                    </button>
+
+                    <button class="filter-btn" data-filter="ensaios" role="tab" aria-selected="false">
+                        Ensaios
+                    </button>
+
+                    <button class="filter-btn" data-filter="familia" role="tab" aria-selected="false">
+                        Família
+                    </button>
+
+                    <button class="filter-btn" data-filter="profissional" role="tab" aria-selected="false">
+                        Profissional
+                    </button>
+
                 </div>
+
+
+                <!-- Galeria -->
 
                 <div class="portfolio-masonry">
-                    <!-- Ensaios -->
-                    <div class="portfolio-item fade-up" data-category="ensaios">
-                        <img src="img/foto-modelo-01.jpeg" alt="Ensaio Modelo 1">
-                        <div class="item-overlay"><span>Ampliar</span></div>
-                    </div>
-                    <div class="portfolio-item fade-up" data-category="ensaios">
-                        <img src="img/foto-modelo-02.jpeg" alt="Ensaio Modelo 2">
-                        <div class="item-overlay"><span>Ampliar</span></div>
-                    </div>
-                    <div class="portfolio-item fade-up" data-category="ensaios">
-                        <img src="img/foto-modelo-03.jpeg" alt="Ensaio Modelo 3">
-                        <div class="item-overlay"><span>Ampliar</span></div>
-                    </div>
-                    <div class="portfolio-item fade-up" data-category="ensaios">
-                        <img src="img/foto-modelo-04.jpeg" alt="Ensaio Modelo 4">
-                        <div class="item-overlay"><span>Ampliar</span></div>
-                    </div>
-                    <div class="portfolio-item fade-up" data-category="ensaios">
-                        <img src="img/foto-modelo-05.jpeg" alt="Ensaio Modelo 5">
-                        <div class="item-overlay"><span>Ampliar</span></div>
-                    </div>
-                    <div class="portfolio-item fade-up" data-category="ensaios">
-                        <img src="img/foto-modelo-06.jpeg" alt="Ensaio Modelo 6">
-                        <div class="item-overlay"><span>Ampliar</span></div>
-                    </div>
-                    <div class="portfolio-item fade-up" data-category="ensaios">
-                        <img src="img/foto-modelo-07.jpeg" alt="Ensaio Modelo 7">
-                        <div class="item-overlay"><span>Ampliar</span></div>
-                    </div>
 
-                    <!-- Família -->
-                    <div class="portfolio-item fade-up" data-category="familia">
-                        <img src="img/foto-familia-01.jpeg" alt="Ensaio Família 1">
-                        <div class="item-overlay"><span>Ampliar</span></div>
-                    </div>
-                    <div class="portfolio-item fade-up" data-category="familia">
-                        <img src="img/foto-familia-02.jpeg" alt="Ensaio Família 2">
-                        <div class="item-overlay"><span>Ampliar</span></div>
-                    </div>
 
-                    <!-- Profissional -->
-                    <div class="portfolio-item fade-up" data-category="profissional">
-                        <img src="img/foto-profissional-01.jpeg" alt="Ensaio Profissional 1">
-                        <div class="item-overlay"><span>Ampliar</span></div>
-                    </div>
-                    <div class="portfolio-item fade-up" data-category="profissional">
-                        <img src="img/foto-profissional-02.jpeg" alt="Ensaio Profissional 2">
-                        <div class="item-overlay"><span>Ampliar</span></div>
-                    </div>
-                    <div class="portfolio-item fade-up" data-category="profissional">
-                        <img src="img/foto-profissional-03.jpeg" alt="Ensaio Profissional 3">
-                        <div class="item-overlay"><span>Ampliar</span></div>
-                    </div>
+                    <!-- ENSAIOS -->
+
+                    <article class="portfolio-item fade-up" data-category="ensaios">
+
+                        <img src="img/foto-modelo-01.jpeg" alt="Ensaio fotográfico modelo 1" loading="lazy">
+
+                        <div class="item-overlay">
+                            <span>Ampliar</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="portfolio-item fade-up" data-category="ensaios">
+
+                        <img src="img/foto-modelo-02.jpeg" alt="Ensaio fotográfico modelo 2" loading="lazy">
+
+                        <div class="item-overlay">
+                            <span>Ampliar</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="portfolio-item fade-up" data-category="ensaios">
+
+                        <img src="img/foto-modelo-03.jpeg" alt="Ensaio fotográfico modelo 3" loading="lazy">
+
+                        <div class="item-overlay">
+                            <span>Ampliar</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="portfolio-item fade-up" data-category="ensaios">
+
+                        <img src="img/foto-modelo-04.jpeg" alt="Ensaio fotográfico modelo 4" loading="lazy">
+
+                        <div class="item-overlay">
+                            <span>Ampliar</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="portfolio-item fade-up" data-category="ensaios">
+
+                        <img src="img/foto-modelo-05.jpeg" alt="Ensaio fotográfico modelo 5" loading="lazy">
+
+                        <div class="item-overlay">
+                            <span>Ampliar</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="portfolio-item fade-up" data-category="ensaios">
+
+                        <img src="img/foto-modelo-06.jpeg" alt="Ensaio fotográfico modelo 6" loading="lazy">
+
+                        <div class="item-overlay">
+                            <span>Ampliar</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="portfolio-item fade-up" data-category="ensaios">
+
+                        <img src="img/foto-modelo-07.jpeg" alt="Ensaio fotográfico modelo 7" loading="lazy">
+
+                        <div class="item-overlay">
+                            <span>Ampliar</span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- FAMÍLIA -->
+
+                    <article class="portfolio-item fade-up" data-category="familia">
+
+                        <img src="img/foto-familia-01.jpeg" alt="Ensaio fotográfico de família 1" loading="lazy">
+
+                        <div class="item-overlay">
+                            <span>Ampliar</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="portfolio-item fade-up" data-category="familia">
+
+                        <img src="img/foto-familia-02.jpeg" alt="Ensaio fotográfico de família 2" loading="lazy">
+
+                        <div class="item-overlay">
+                            <span>Ampliar</span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROFISSIONAL -->
+
+                    <article class="portfolio-item fade-up" data-category="profissional">
+
+                        <img src="img/foto-profissional-01.jpeg" alt="Ensaio fotográfico profissional 1" loading="lazy">
+
+                        <div class="item-overlay">
+                            <span>Ampliar</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="portfolio-item fade-up" data-category="profissional">
+
+                        <img src="img/foto-profissional-02.jpeg" alt="Ensaio fotográfico profissional 2" loading="lazy">
+
+                        <div class="item-overlay">
+                            <span>Ampliar</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="portfolio-item fade-up" data-category="profissional">
+
+                        <img src="img/foto-profissional-03.jpeg" alt="Ensaio fotográfico profissional 3" loading="lazy">
+
+                        <div class="item-overlay">
+                            <span>Ampliar</span>
+                        </div>
+
+                    </article>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- Quote Section -->
+
+        <!-- =================================================
+             MANIFESTO
+        ================================================== -->
+
         <section id="quote" class="section-padding">
+
             <div class="container text-center">
-                <h2 class="huge-text fade-up">Momentos passam.<br>Memórias permanecem.</h2>
+
+                <span class="section-label fade-up">
+                    O tempo passa
+                </span>
+
+                <h2 class="huge-text fade-up">
+                    Momentos passam.
+                    <br>
+                    Memórias permanecem.
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FEEDBACKS
+        ================================================== -->
+
+        <section id="feedbacks" class="section-padding feedbacks-section">
+            <div class="container">
+
+                <div class="feedbacks-header fade-up">
+                    <span class="section-label">Quem viveu a experiência</span>
+                    <h2>Histórias que também merecem ser lembradas.</h2>
+                    <p>Alguns depoimentos de pessoas que confiaram seus momentos ao meu olhar.</p>
+                </div>
+
+                <div class="feedbacks-carousel" aria-label="Depoimentos de clientes">
+
+                    <article class="feedback-card fade-up">
+                        <div class="feedback-stars" aria-label="5 estrelas">★★★★★</div>
+                        <p class="feedback-text">“O ensaio foi leve, natural e muito mais especial do que eu imaginava. As fotos conseguiram transmitir exatamente quem eu sou.”</p>
+                        <div class="feedback-author">
+                            <span class="feedback-avatar">A</span>
+                            <div>
+                                <strong>Cliente</strong>
+                                <span>Ensaio feminino</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="feedback-card fade-up">
+                        <div class="feedback-stars" aria-label="5 estrelas">★★★★★</div>
+                        <p class="feedback-text">“A direção durante o ensaio fez toda a diferença. Me senti confortável e o resultado ficou elegante e autêntico.”</p>
+                        <div class="feedback-author">
+                            <span class="feedback-avatar">M</span>
+                            <div>
+                                <strong>Cliente</strong>
+                                <span>Ensaio profissional</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="feedback-card fade-up">
+                        <div class="feedback-stars" aria-label="5 estrelas">★★★★★</div>
+                        <p class="feedback-text">“Foi uma experiência muito especial. Cada detalhe foi pensado com cuidado e as fotografias ficaram incríveis.”</p>
+                        <div class="feedback-author">
+                            <span class="feedback-avatar">L</span>
+                            <div>
+                                <strong>Cliente</strong>
+                                <span>Ensaio família</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="feedback-card fade-up">
+                        <div class="feedback-stars" aria-label="5 estrelas">★★★★★</div>
+                        <p class="feedback-text">“O resultado ficou sofisticado, delicado e muito fiel ao momento que vivemos. Vou guardar essas imagens para sempre.”</p>
+                        <div class="feedback-author">
+                            <span class="feedback-avatar">C</span>
+                            <div>
+                                <strong>Cliente</strong>
+                                <span>Retrato editorial</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="carousel-hint" aria-hidden="true">
+                    <span>Arraste para explorar</span>
+                    <i></i>
+                </div>
+
             </div>
         </section>
 
-        <!-- Contato Section -->
+
+        <!-- =================================================
+             CONTATO
+        ================================================== -->
+
         <section id="contato" class="section-padding">
+
             <div class="container text-center fade-up">
-                <h2>Vamos transformar seu momento em memória?</h2>
-                <p class="subtitle">Se você está planejando um ensaio ou deseja registrar uma história especial, vamos
-                    conversar.</p>
-                <a href="#" class="btn btn-primary btn-large whatsapp-link">Agendar ensaio</a>
+
+                <span class="section-label">
+                    Vamos conversar
+                </span>
+
+                <h2>
+                    Vamos transformar seu momento em memória?
+                </h2>
+
+                <p class="subtitle">
+                    Se você está planejando um ensaio ou deseja
+                    registrar uma história especial, vamos conversar.
+                </p>
+
+                <a href="#" class="btn btn-primary btn-large whatsapp-link">
+                    Agendar ensaio
+                </a>
+
             </div>
+
         </section>
+
     </main>
 
-    <!-- Footer -->
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
     <footer class="footer">
+
         <div class="container footer-content">
+
             <img src="img/logo-eduarda-white.png" alt="Eduarda Fotografia" class="footer-logo">
+
             <div class="footer-links">
-                <a href="#" class="whatsapp-link">WhatsApp</a>
-                <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-                <a href="#portfolio">Portfólio</a>
-                <a href="#contato">Contato</a>
+
+                <a href="#portfolio">
+                    Portfólio
+                </a>
+
+                <a href="#contato">
+                    Contato
+                </a>
+
+                <a href="#sobre">
+                    Sobre
+                </a>
+
+                <a href="#feedbacks">
+                    Feedbacks
+                </a>
+
+                <a href="#" class="whatsapp-link">
+                    WhatsApp
+                </a>
+
+                <a href="https://instagram.com" target="_blank" rel="noopener">
+                    Instagram
+                </a>
+
             </div>
-            <p class="copyright">&copy; 2026 Eduarda Fotografia. Todos os direitos reservados.</p>
+
+            <p class="copyright">
+                &copy; 2026 Eduarda Fotografia.
+                Todos os direitos reservados.
+            </p>
+
         </div>
+
     </footer>
 
-    <!-- Lightbox Modal -->
+
+    <!-- =====================================================
+         MOBILE FLOATING NAV
+         Aparece somente no mobile
+    ====================================================== -->
+
+    <!-- =====================================================
+     MOBILE BOTTOM NAV
+====================================================== -->
+
+    <!-- MOBILE FLOATING NAV -->
+    <nav class="mobile-bottom-nav" aria-label="Navegação mobile">
+
+        <!-- HOME -->
+        <a href="#hero" class="mobile-nav-item active" data-section="hero" aria-label="Início" aria-current="page">
+            <span class="mobile-nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M3.5 10.8L12 3.8l8.5 7v8.2a1.5 1.5 0 0 1-1.5 1.5h-14A1.5 1.5 0 0 1 3.5 19v-8.2Z"
+                        stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M9 20v-5.8h6V20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </span>
+        </a>
+
+
+        <!-- PERFIL -->
+        <a href="#sobre" class="mobile-nav-item" data-section="sobre" aria-label="Perfil">
+            <span class="mobile-nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.7" />
+
+                    <path d="M5.2 20c.7-3.7 3-5.6 6.8-5.6s6.1 1.9 6.8 5.6" stroke="currentColor" stroke-width="1.7"
+                        stroke-linecap="round" />
+                </svg>
+            </span>
+        </a>
+
+
+        <!-- GALERIA / CÂMERA -->
+        <a href="#portfolio" class="mobile-nav-item" data-section="portfolio" aria-label="Galeria">
+            <span class="mobile-nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+
+                    <path
+                        d="M4.5 7.5h3l1.3-2h6.4l1.3 2h3A1.5 1.5 0 0 1 21 9v9.5a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5V9a1.5 1.5 0 0 1 1.5-1.5Z"
+                        stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+
+                    <circle cx="12" cy="13.5" r="3.2" stroke="currentColor" stroke-width="1.7" />
+
+                </svg>
+            </span>
+        </a>
+
+
+        <!-- FEEDBACKS -->
+        <a href="#feedbacks" class="mobile-nav-item" data-section="feedbacks" aria-label="Feedbacks">
+            <span class="mobile-nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4.5 5.5h15A1.5 1.5 0 0 1 21 7v8a1.5 1.5 0 0 1-1.5 1.5H12l-4.5 3v-3H4.5A1.5 1.5 0 0 1 3 15V7a1.5 1.5 0 0 1 1.5-1.5Z"
+                        stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                    <path d="M7.5 10h9M7.5 13h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+            </span>
+        </a>
+
+        <!-- CONTATO -->
+        <a href="#contato" class="mobile-nav-item" data-section="contato" aria-label="Contato">
+            <span class="mobile-nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+
+                    <rect x="3.5" y="5" width="17" height="14" rx="2.5" stroke="currentColor" stroke-width="1.7" />
+
+                    <path d="m5.2 7.5 6.8 5.2 6.8-5.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+                        stroke-linejoin="round" />
+
+                </svg>
+            </span>
+        </a>
+
+    </nav>
+
+    <!-- =====================================================
+         LIGHTBOX
+    ====================================================== -->
+
     <div id="lightbox" class="lightbox" aria-hidden="true">
-        <button class="lightbox-close" aria-label="Fechar ampliação">&times;</button>
-        <button class="lightbox-prev" aria-label="Imagem anterior">&#8249;</button>
+
+        <button class="lightbox-close" aria-label="Fechar ampliação">
+            &times;
+        </button>
+
+        <button class="lightbox-prev" aria-label="Imagem anterior">
+            &#8249;
+        </button>
+
         <div class="lightbox-content">
+
             <img src="" alt="Imagem ampliada" id="lightbox-img">
+
         </div>
-        <button class="lightbox-next" aria-label="Próxima imagem">&#8250;</button>
+
+        <button class="lightbox-next" aria-label="Próxima imagem">
+            &#8250;
+        </button>
+
     </div>
 
+
     <script src="js/main.js"></script>
+
+    <script>
+        /* Navegação mobile + seção ativa */
+        (() => {
+            const items = [...document.querySelectorAll('.mobile-nav-item')];
+            const sections = items
+                .map(item => document.getElementById(item.dataset.section))
+                .filter(Boolean);
+
+            const setActive = (id) => {
+                items.forEach(item => {
+                    const active = item.dataset.section === id;
+                    item.classList.toggle('active', active);
+                    if (active) item.setAttribute('aria-current', 'page');
+                    else item.removeAttribute('aria-current');
+                });
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                const visible = entries
+                    .filter(entry => entry.isIntersecting)
+                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+                if (visible) setActive(visible.target.id);
+            }, {
+                rootMargin: '-30% 0px -55% 0px',
+                threshold: [0.1, 0.25, 0.5]
+            });
+
+            sections.forEach(section => observer.observe(section));
+
+            items.forEach(item => {
+                item.addEventListener('click', () => setActive(item.dataset.section));
+            });
+        })();
+    </script>
+
 </body>
 
 </html>
