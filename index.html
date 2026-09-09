@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduarda Fotografia | Portfólio Editorial</title>
+    <meta name="description" content="Retratos, ensaios e histórias capturados com sensibilidade e autenticidade.">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Tipografia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <a href="#hero" class="logo">
+                <img src="img/logo-eduarda-white.png" alt="Eduarda Fotografia" class="logo-white">
+                <img src="img/logo-eduarda-dark.png" alt="Eduarda Fotografia" class="logo-dark">
+            </a>
+
+            <button class="mobile-menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-bg">
+                <img src="img/foto Eduarda.png" alt="Eduarda Fotógrafa" class="hero-img">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content fade-up">
+                <h1>Fotografia que transforma momentos em memória.</h1>
+                <p>Retratos, ensaios e histórias capturados com sensibilidade e autenticidade.</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">Conheça meu trabalho</a>
+                    <a href="#" class="btn btn-secondary whatsapp-link">Entrar em contato</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <!-- Sobre Section -->
+        <section id="sobre" class="section-padding">
+            <div class="container split-layout">
+                <div class="sobre-image fade-up">
+                    <img src="img/foto-profissional-01.jpeg" alt="Sessão fotográfica editorial">
+                </div>
+                <div class="sobre-text fade-up delay-1">
+                    <h2>"Cada fotografia é uma forma de guardar aquilo que o tempo não consegue repetir."</h2>
+                    <p>Meu olhar busca a essência de cada história. Mais do que registrar imagens, meu propósito é
+                        capturar a verdade, a elegância e a conexão de cada instante.</p>
+                    <p>Com uma abordagem minimalista e direção sensível, construímos juntos memórias visuais que
+                        transcenderão gerações.</p>
+                    <a href="#" class="link-arrow whatsapp-link">Falar comigo &#8594;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section-padding bg-light">
+            <div class="container">
+                <div class="portfolio-header fade-up">
+                    <h2>Portfólio</h2>
+                    <p>Alguns momentos que tive o privilégio de registrar.</p>
+                </div>
+
+                <div class="portfolio-filters fade-up">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="ensaios">Ensaios</button>
+                    <button class="filter-btn" data-filter="familia">Família</button>
+                    <button class="filter-btn" data-filter="profissional">Profissional</button>
+                </div>
+
+                <div class="portfolio-masonry">
+                    <!-- Ensaios -->
+                    <div class="portfolio-item fade-up" data-category="ensaios">
+                        <img src="img/foto-modelo-01.jpeg" alt="Ensaio Modelo 1">
+                        <div class="item-overlay"><span>Ampliar</span></div>
+                    </div>
+                    <div class="portfolio-item fade-up" data-category="ensaios">
+                        <img src="img/foto-modelo-02.jpeg" alt="Ensaio Modelo 2">
+                        <div class="item-overlay"><span>Ampliar</span></div>
+                    </div>
+                    <div class="portfolio-item fade-up" data-category="ensaios">
+                        <img src="img/foto-modelo-03.jpeg" alt="Ensaio Modelo 3">
+                        <div class="item-overlay"><span>Ampliar</span></div>
+                    </div>
+                    <div class="portfolio-item fade-up" data-category="ensaios">
+                        <img src="img/foto-modelo-04.jpeg" alt="Ensaio Modelo 4">
+                        <div class="item-overlay"><span>Ampliar</span></div>
+                    </div>
+                    <div class="portfolio-item fade-up" data-category="ensaios">
+                        <img src="img/foto-modelo-05.jpeg" alt="Ensaio Modelo 5">
+                        <div class="item-overlay"><span>Ampliar</span></div>
+                    </div>
+                    <div class="portfolio-item fade-up" data-category="ensaios">
+                        <img src="img/foto-modelo-06.jpeg" alt="Ensaio Modelo 6">
+                        <div class="item-overlay"><span>Ampliar</span></div>
+                    </div>
+                    <div class="portfolio-item fade-up" data-category="ensaios">
+                        <img src="img/foto-modelo-07.jpeg" alt="Ensaio Modelo 7">
+                        <div class="item-overlay"><span>Ampliar</span></div>
+                    </div>
+
+                    <!-- Família -->
+                    <div class="portfolio-item fade-up" data-category="familia">
+                        <img src="img/foto-familia-01.jpeg" alt="Ensaio Família 1">
+                        <div class="item-overlay"><span>Ampliar</span></div>
+                    </div>
+                    <div class="portfolio-item fade-up" data-category="familia">
+                        <img src="img/foto-familia-02.jpeg" alt="Ensaio Família 2">
+                        <div class="item-overlay"><span>Ampliar</span></div>
+                    </div>
+
+                    <!-- Profissional -->
+                    <div class="portfolio-item fade-up" data-category="profissional">
+                        <img src="img/foto-profissional-01.jpeg" alt="Ensaio Profissional 1">
+                        <div class="item-overlay"><span>Ampliar</span></div>
+                    </div>
+                    <div class="portfolio-item fade-up" data-category="profissional">
+                        <img src="img/foto-profissional-02.jpeg" alt="Ensaio Profissional 2">
+                        <div class="item-overlay"><span>Ampliar</span></div>
+                    </div>
+                    <div class="portfolio-item fade-up" data-category="profissional">
+                        <img src="img/foto-profissional-03.jpeg" alt="Ensaio Profissional 3">
+                        <div class="item-overlay"><span>Ampliar</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section id="quote" class="section-padding">
+            <div class="container text-center">
+                <h2 class="huge-text fade-up">Momentos passam.<br>Memórias permanecem.</h2>
+            </div>
+        </section>
+
+        <!-- Contato Section -->
+        <section id="contato" class="section-padding">
+            <div class="container text-center fade-up">
+                <h2>Vamos transformar seu momento em memória?</h2>
+                <p class="subtitle">Se você está planejando um ensaio ou deseja registrar uma história especial, vamos
+                    conversar.</p>
+                <a href="#" class="btn btn-primary btn-large whatsapp-link">Agendar ensaio</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <img src="img/logo-eduarda-white.png" alt="Eduarda Fotografia" class="footer-logo">
+            <div class="footer-links">
+                <a href="#" class="whatsapp-link">WhatsApp</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+                <a href="#portfolio">Portfólio</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <p class="copyright">&copy; 2026 Eduarda Fotografia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Fechar ampliação">&times;</button>
+        <button class="lightbox-prev" aria-label="Imagem anterior">&#8249;</button>
+        <div class="lightbox-content">
+            <img src="" alt="Imagem ampliada" id="lightbox-img">
+        </div>
+        <button class="lightbox-next" aria-label="Próxima imagem">&#8250;</button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
