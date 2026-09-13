@@ -241,7 +241,7 @@ header.scrolled {
 
 header.scrolled .header-container {
     background: rgba(12, 12, 12, 0.68);
-    border: 1px solid var(--border);
+    border: none;
     box-shadow: var(--glass-shadow);
 }
 
@@ -283,6 +283,14 @@ header.scrolled .header-container {
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--white);
+    transition: all 0.4s var(--ease);
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 12px;
     transition: all 0.4s var(--ease);
 }
 
@@ -351,51 +359,71 @@ header.scrolled .header-container {
 
 
 /* =====================================================
-   NAVIGATION
+   NAVIGATION - Novo Modelo
 ===================================================== */
 
-.nav-menu ul {
+.nav-menu {
+    flex: 1;
+}
+
+.nav-items {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 28px;
     list-style: none;
 }
 
-.nav-menu a {
+.nav-item {
     position: relative;
-    display: inline-flex;
+}
+
+.nav-link-new {
+    position: relative;
+    display: flex;
     align-items: center;
-    padding: 10px 16px;
-    color: rgba(255, 255, 255, 0.72);
+    gap: 8px;
+    padding: 8px 0;
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.75rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    border-radius: 999px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
-    right: 16px;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.5);
-    transform: scaleX(0);
-    transform-origin: right;
+.nav-dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
     transition: all 0.4s var(--ease);
+    flex-shrink: 0;
 }
 
-.nav-menu a:hover {
+.nav-text {
+    transition: color 0.3s ease;
+}
+
+.nav-link-new:hover {
     color: var(--white);
-    background: rgba(255, 255, 255, 0.08);
 }
 
-.nav-menu a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+.nav-link-new:hover .nav-dot {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+    transform: scale(1.4);
+}
+
+.nav-item.active .nav-link-new {
+    color: var(--white);
+}
+
+.nav-item.active .nav-link-new .nav-dot {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+    width: 10px;
+    height: 10px;
 }
 
 
@@ -473,6 +501,36 @@ header.scrolled .header-container {
 .mobile-nav a:hover {
     color: var(--white);
     transform: translateX(8px);
+}
+
+.mobile-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px !important;
+    font-size: inherit !important;
+    transform: none !important;
+    margin-bottom: 12px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-logo:hover {
+    transform: none !important;
+}
+
+.mobile-logo-badge {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--white);
 }
 
 
@@ -836,8 +894,8 @@ header.scrolled .header-container {
     align-items: center;
     gap: 4px;
     background: rgba(255, 255, 255, 0.045);
-    border: 1px solid var(--border);
-    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 }
@@ -846,57 +904,92 @@ header.scrolled .header-container {
     position: relative;
     flex-shrink: 0;
     border: 0;
-    padding: 11px 18px;
+    padding: 10px 16px;
     color: var(--text-muted);
     background: transparent;
-    border-radius: 999px;
+    border-radius: 10px;
     font-size: 0.7rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+}
+
+.filter-label {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.filter-indicator {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 2px;
+    transition: width 0.4s var(--ease);
 }
 
 .filter-btn:hover {
     color: var(--text);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.filter-btn:hover .filter-indicator {
+    width: 60%;
 }
 
 .filter-btn.active {
     color: #111;
     background: rgba(255, 255, 255, 0.94);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 1);
 }
 
-.portfolio-nav {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.filter-btn.active .filter-indicator {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
 }
 
-.carousel-btn {
-    width: 48px;
-    height: 48px;
+
+
+.carousel-hint {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
-    color: var(--white);
-    cursor: pointer;
-    transition: all 0.3s ease;
+    gap: 8px;
+    margin-bottom: 24px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    animation: fadeInUp 1.2s var(--ease) 0.3s forwards;
+    opacity: 0;
 }
 
-.carousel-btn:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.25);
-    transform: translateY(-2px);
+.carousel-hint [data-feather] {
+    width: 16px;
+    height: 16px;
+    animation: slideRight 2s ease-in-out infinite;
 }
 
-.carousel-btn svg {
-    width: 20px;
-    height: 20px;
+@keyframes slideRight {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(6px);
+    }
 }
 
 
@@ -1472,11 +1565,15 @@ header.scrolled .header-container {
 
     header.scrolled {
         padding: 8px 0;
+        background: transparent !important;
+        border: none !important;
     }
 
     .header-container {
         padding: 8px 12px;
         gap: 10px;
+        background: transparent !important;
+        border: none !important;
     }
 
     .header-left {

@@ -73,6 +73,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =====================================================
+       NAVEGAÇÃO ATIVA - Detectar seção atual
+    ====================================================== */
+
+    function updateActiveNav() {
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 200 && rect.bottom >= 200) {
+                navItems.forEach(item => item.classList.remove('active'));
+                const activeLink = document.querySelector(`.nav-link-new[href="#${section.id}"]`);
+                if (activeLink) {
+                    activeLink.closest('.nav-item').classList.add('active');
+                }
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
+
+    /* =====================================================
        NAVEGAÇÃO SUAVE
     ====================================================== */
 
@@ -114,40 +137,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =====================================================
-       CARROSSEL HORIZONTAL
+       CARROSSEL HORIZONTAL (Swipe automático)
     ====================================================== */
 
     const carousel = document.querySelector('.portfolio-carousel');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
 
-    if (carousel && prevBtn && nextBtn) {
-        const scrollAmount = 400;
-
-        prevBtn.addEventListener('click', () => {
-            carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        });
-
-        nextBtn.addEventListener('click', () => {
-            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        });
-
-        // Atualizar estado dos botões
-        function updateCarouselButtons() {
-            const isAtStart = carousel.scrollLeft < 10;
-            const isAtEnd = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 10;
-
-            prevBtn.disabled = isAtStart;
-            nextBtn.disabled = isAtEnd;
-
-            prevBtn.style.opacity = isAtStart ? '0.4' : '1';
-            nextBtn.style.opacity = isAtEnd ? '0.4' : '1';
-        }
-
-        carousel.addEventListener('scroll', updateCarouselButtons, { passive: true });
-        window.addEventListener('resize', updateCarouselButtons);
-        updateCarouselButtons();
-    }
+    /* Carrossel funciona com scroll nativo + swipe */
 
 
     /* =====================================================
