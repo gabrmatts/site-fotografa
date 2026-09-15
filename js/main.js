@@ -73,21 +73,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =====================================================
-       NAVEGAÇÃO ATIVA - Detectar seção atual
+       NAVEGAÇÃO ATIVA - Scroll Spy
     ====================================================== */
 
     function updateActiveNav() {
-        const sections = document.querySelectorAll('section[id]');
         const navItems = document.querySelectorAll('.nav-item');
-
+        const sections = document.querySelectorAll('section[id]');
+        
+        let currentSection = '';
+        
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
-            if (rect.top <= 200 && rect.bottom >= 200) {
-                navItems.forEach(item => item.classList.remove('active'));
-                const activeLink = document.querySelector(`.nav-link-new[href="#${section.id}"]`);
-                if (activeLink) {
-                    activeLink.closest('.nav-item').classList.add('active');
-                }
+            if (rect.top <= window.innerHeight / 3 && rect.bottom >= window.innerHeight / 3) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+        
+        navItems.forEach(item => {
+            const link = item.querySelector('a');
+            if (link && link.getAttribute('href') === `#${currentSection}`) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
             }
         });
     }
@@ -137,20 +144,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =====================================================
-       CARROSSEL HORIZONTAL (Swipe automático)
-    ====================================================== */
-
-    const carousel = document.querySelector('.portfolio-carousel');
-
-    /* Carrossel funciona com scroll nativo + swipe */
-
-
-    /* =====================================================
        FILTRO DO PORTFÓLIO
     ====================================================== */
 
     const filterBtns = document.querySelectorAll('.filter-btn');
     const portfolioCards = document.querySelectorAll('.portfolio-card');
+    const carousel = document.querySelector('.portfolio-carousel');
     let activeImages = [];
 
     function updateActiveImages() {
@@ -202,8 +201,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.querySelector('.lightbox-close');
-    const prevBtn2 = document.querySelector('.lightbox-prev');
-    const nextBtn2 = document.querySelector('.lightbox-next');
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
     let currentIndex = 0;
 
     function openLightbox(image) {
@@ -251,12 +250,12 @@ document.addEventListener('DOMContentLoaded', () => {
         closeBtn.addEventListener('click', closeLightbox);
     }
 
-    if (nextBtn2) {
-        nextBtn2.addEventListener('click', showNextImage);
+    if (nextBtn) {
+        nextBtn.addEventListener('click', showNextImage);
     }
 
-    if (prevBtn2) {
-        prevBtn2.addEventListener('click', showPreviousImage);
+    if (prevBtn) {
+        prevBtn.addEventListener('click', showPreviousImage);
     }
 
     if (lightbox) {
@@ -315,32 +314,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =====================================================
-       SWIPE NO CARROSSEL (MOBILE)
-    ====================================================== */
-
-    if (carousel) {
-        let touchStart = 0;
-
-        carousel.addEventListener('touchstart', (e) => {
-            touchStart = e.touches[0].clientX;
-        }, { passive: true });
-
-        carousel.addEventListener('touchend', (e) => {
-            const touchEnd = e.changedTouches[0].clientX;
-            const diff = touchStart - touchEnd;
-
-            if (Math.abs(diff) > 50) {
-                if (diff > 0) {
-                    nextBtn.click();
-                } else {
-                    prevBtn.click();
-                }
-            }
-        }, { passive: true });
-    }
-
-
-    /* =====================================================
        PERFORMANCE: Lazy Loading
     ====================================================== */
 
@@ -366,18 +339,5 @@ document.addEventListener('DOMContentLoaded', () => {
     ====================================================== */
 
     document.documentElement.style.scrollBehavior = 'smooth';
-
-
-    /* =====================================================
-       AJUSTE DE PADDING PARA MOBILE COM NOTCH
-    ====================================================== */
-
-    if (navigator.standalone || window.navigator.userAgent.includes('iPhone')) {
-        const viewportMeta = document.querySelector('meta[name="viewport"]');
-        if (viewportMeta) {
-            viewportMeta.setAttribute('content', 
-                'width=device-width, initial-scale=1.0, viewport-fit=cover');
-        }
-    }
 
 });
