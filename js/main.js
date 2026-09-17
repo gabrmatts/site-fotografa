@@ -144,57 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =====================================================
-       FILTRO DO PORTFÓLIO
-    ====================================================== */
-
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const portfolioCards = document.querySelectorAll('.portfolio-card');
-    const carousel = document.querySelector('.portfolio-carousel');
-    let activeImages = [];
-
-    function updateActiveImages() {
-        activeImages = Array.from(portfolioCards)
-            .filter(card => !card.classList.contains('hidden'))
-            .map(card => card.querySelector('img'))
-            .filter(Boolean);
-    }
-
-    filterBtns.forEach(button => {
-        button.addEventListener('click', () => {
-            filterBtns.forEach(btn => {
-                btn.classList.remove('active');
-                btn.setAttribute('aria-selected', 'false');
-            });
-
-            button.classList.add('active');
-            button.setAttribute('aria-selected', 'true');
-
-            const filterValue = button.dataset.filter;
-
-            portfolioCards.forEach(card => {
-                const category = card.dataset.category;
-                const shouldHide = filterValue !== 'all' && category !== filterValue;
-
-                if (shouldHide) {
-                    card.classList.add('hidden');
-                } else {
-                    card.classList.remove('hidden');
-                }
-            });
-
-            updateActiveImages();
-
-            // Scroll suave para o carrossel
-            if (carousel) {
-                carousel.scrollTo({ left: 0, behavior: 'smooth' });
-            }
-        });
-    });
-
-    updateActiveImages();
-
-
-    /* =====================================================
        LIGHTBOX
     ====================================================== */
 
@@ -204,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.querySelector('.lightbox-prev');
     const nextBtn = document.querySelector('.lightbox-next');
     let currentIndex = 0;
+    let allImages = [];
 
     function openLightbox(image) {
         if (!lightbox || !lightboxImg) return;
@@ -224,24 +174,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showNextImage() {
-        if (!activeImages.length) return;
-        currentIndex = (currentIndex + 1) % activeImages.length;
-        openLightbox(activeImages[currentIndex]);
+        if (!allImages.length) return;
+        currentIndex = (currentIndex + 1) % allImages.length;
+        openLightbox(allImages[currentIndex]);
     }
 
     function showPreviousImage() {
-        if (!activeImages.length) return;
-        currentIndex = (currentIndex - 1 + activeImages.length) % activeImages.length;
-        openLightbox(activeImages[currentIndex]);
+        if (!allImages.length) return;
+        currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+        openLightbox(allImages[currentIndex]);
     }
 
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+    
     portfolioCards.forEach(card => {
         card.addEventListener('click', () => {
             const image = card.querySelector('img');
             if (!image) return;
 
-            updateActiveImages();
-            currentIndex = activeImages.indexOf(image);
+            allImages = Array.from(portfolioCards).map(c => c.querySelector('img')).filter(Boolean);
+            currentIndex = allImages.indexOf(image);
             openLightbox(image);
         });
     });
