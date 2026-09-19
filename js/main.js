@@ -1,3 +1,106 @@
+/* =====================================================
+   MELHORIAS JAVASCRIPT - BUG FIXES
+===================================================== */
+
+// Melhorar WhatsApp link com message padrão
+document.addEventListener('DOMContentLoaded', function() {
+    const whatsappLinks = document.querySelectorAll('.whatsapp-link');
+    const WHATSAPP_NUMBER = '5511999999999';
+    const MESSAGE = 'Olá! Gostaria de conhecer mais sobre seus serviços de fotografia.';
+    
+    whatsappLinks.forEach(link => {
+        const encodedMessage = encodeURIComponent(MESSAGE);
+        link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+    });
+
+    // Prevenir form submit default
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('.newsletter-input');
+            if (email && email.value) {
+                console.log('Email inscrito:', email.value);
+                email.value = '';
+                alert('Obrigado por se inscrever!');
+            }
+        });
+    }
+
+    // Melhorar lightbox - prevent body scroll
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        const originalShow = lightbox.classList.add;
+        lightbox.addEventListener('DOMNodeInserted', function() {
+            if (this.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    }
+
+    // Melhorar mobile menu - close ao clicar num link
+    const mobileNav = document.querySelector('.mobile-nav');
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    if (mobileNav) {
+        const navLinks = mobileNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                if (mobileMenuToggle) {
+                    mobileMenuToggle.classList.remove('active');
+                }
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    // Melhorar Feather Icons rendering
+    if (window.feather) {
+        setTimeout(() => {
+            window.feather.replace();
+        }, 100);
+    }
+});
+
+// Event delegation para performance
+document.addEventListener('click', function(e) {
+    // Lightbox close no background
+    if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-content')) {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+    }
+});
+
+// Debounce scroll para melhor performance
+let scrollTimeout;
+window.addEventListener('scroll', function() {
+    if (scrollTimeout) return;
+    scrollTimeout = setTimeout(() => {
+        scrollTimeout = null;
+    }, 100);
+}, { passive: true });
+
+// Melhorar IntersectionObserver para fade-up
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.fade-up').forEach(element => {
+    observer.observe(element);
+});
 document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize Feather Icons
@@ -203,11 +306,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (nextBtn) {
-        nextBtn.addEventListener('click', showNextImage);
+        // nextBtn listener removido
     }
 
     if (prevBtn) {
-        prevBtn.addEventListener('click', showPreviousImage);
+        // prevBtn listener removido
     }
 
     if (lightbox) {
