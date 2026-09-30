@@ -8,12 +8,14 @@
     <meta name="description" content="Retratos, ensaios e histórias capturados com sensibilidade e autenticidade.">
     <meta name="theme-color" content="#070707">
     <link rel="stylesheet" href="css/style.css">
-    
+
     <!-- Tipografia -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
     <!-- Feather Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
 </head>
@@ -32,7 +34,7 @@
                 </a>
             </div>
 
-            <!-- Navegação desktop - Novo Estilo -->
+            <!-- Navegação desktop -->
             <nav class="nav-menu" aria-label="Navegação principal">
                 <ul class="nav-items">
                     <li class="nav-item active">
@@ -131,7 +133,15 @@
         <section id="sobre" class="section-padding">
             <div class="container split-layout">
                 <div class="sobre-image fade-up">
-                    <img src="img/foto-profissional-01.jpeg" alt="Sessão fotográfica editorial" loading="lazy">
+                    <div class="sobre-slideshow" role="img"
+                        aria-label="Fotos de sessões fotográficas profissionais de Eduarda Silva">
+                        <img src="img/foto-profissional-01.jpeg" alt="Sessão fotográfica profissional 1"
+                            class="slide active" loading="lazy">
+                        <img src="img/foto-profissional-02.jpeg" alt="Sessão fotográfica profissional 2" class="slide"
+                            loading="lazy">
+                        <img src="img/foto-profissional-03.jpeg" alt="Sessão fotográfica profissional 3" class="slide"
+                            loading="lazy">
+                    </div>
                     <div class="image-border"></div>
                 </div>
 
@@ -143,7 +153,7 @@
 
                     <h2>
                         Eduarda Silva<br>
-                        Fotógrafa & Designer
+                        Fotógrafa &amp; Designer
                     </h2>
 
                     <p>
@@ -151,12 +161,13 @@
                     </p>
 
                     <p>
-                        Entre lentes, cores e composições, encontro diferentes formas de contar histórias. Acredito na arte como uma maneira de guardar sentimentos e enxergar beleza nas coisas mais simples.
+                        Entre lentes, cores e composições, encontro diferentes formas de contar histórias. Acredito na
+                        arte como uma maneira de guardar sentimentos e enxergar beleza nas coisas mais simples.
                     </p>
 
-                    <a href="#contato" class="link-arrow">
+                    <a href="#contato" class="btn btn-secondary">
                         Vamos conversar
-                        <span aria-hidden="true">→</span>
+                        <i data-feather="arrow-right" aria-hidden="true" width="18" height="18"></i>
                     </a>
                 </div>
             </div>
@@ -175,7 +186,52 @@
                         <span>Seleção de trabalhos</span>
                     </div>
                     <h2>Portfólio</h2>
-                    <p>Uma curadoria dos momentos que tive o privilégio de registrar.<br>Cada imagem conta uma história única.</p>
+                    <p>Uma curadoria dos momentos que tive o privilégio de registrar.<br>Cada imagem conta uma história
+                        única.</p>
+
+                    <div class="portfolio-filters">
+                        <button type="button" class="filter-toggle" id="filterToggle" aria-haspopup="listbox"
+                            aria-expanded="false" aria-controls="filterMenu">
+                            <i data-feather="sliders" aria-hidden="true" width="15" height="15"></i>
+                            <span class="filter-toggle-label">Todas as categorias</span>
+                            <i data-feather="chevron-down" class="filter-toggle-chevron" aria-hidden="true" width="16"
+                                height="16"></i>
+                        </button>
+
+                        <ul class="filter-menu" id="filterMenu" role="listbox"
+                            aria-label="Filtrar portfólio por categoria">
+                            <li class="filter-option is-selected" role="option" aria-selected="true" data-filter="all">
+                                <i data-feather="grid" aria-hidden="true" width="15" height="15"></i>
+                                <span>Todas as categorias</span>
+                                <i data-feather="check" class="filter-check" aria-hidden="true" width="14"
+                                    height="14"></i>
+                            </li>
+                            <li class="filter-option" role="option" aria-selected="false" data-filter="aniversario">
+                                <i data-feather="gift" aria-hidden="true" width="15" height="15"></i>
+                                <span>Aniversário</span>
+                                <i data-feather="check" class="filter-check" aria-hidden="true" width="14"
+                                    height="14"></i>
+                            </li>
+                            <li class="filter-option" role="option" aria-selected="false" data-filter="ensaios">
+                                <i data-feather="camera" aria-hidden="true" width="15" height="15"></i>
+                                <span>Ensaios</span>
+                                <i data-feather="check" class="filter-check" aria-hidden="true" width="14"
+                                    height="14"></i>
+                            </li>
+                            <li class="filter-option" role="option" aria-selected="false" data-filter="familia">
+                                <i data-feather="users" aria-hidden="true" width="15" height="15"></i>
+                                <span>Família</span>
+                                <i data-feather="check" class="filter-check" aria-hidden="true" width="14"
+                                    height="14"></i>
+                            </li>
+                            <li class="filter-option" role="option" aria-selected="false" data-filter="profissional">
+                                <i data-feather="briefcase" aria-hidden="true" width="15" height="15"></i>
+                                <span>Profissional</span>
+                                <i data-feather="check" class="filter-check" aria-hidden="true" width="14"
+                                    height="14"></i>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Carrossel -->
@@ -188,7 +244,8 @@
                         <!-- ANIVERSÁRIO -->
                         <article class="portfolio-card" data-category="aniversario">
                             <div class="card-image">
-                                <img src="img/foto-aniversario-01.jpeg" alt="Ensaio fotográfico aniversário 1" loading="lazy">
+                                <img src="img/foto-aniversario-01.jpeg" alt="Ensaio fotográfico aniversário 1"
+                                    loading="lazy">
                             </div>
                             <div class="card-overlay">
                                 <span>Ampliar</span>
@@ -197,7 +254,8 @@
 
                         <article class="portfolio-card" data-category="aniversario">
                             <div class="card-image">
-                                <img src="img/foto-aniversario-02.jpeg" alt="Ensaio fotográfico aniversário 2" loading="lazy">
+                                <img src="img/foto-aniversario-02.jpeg" alt="Ensaio fotográfico aniversário 2"
+                                    loading="lazy">
                             </div>
                             <div class="card-overlay">
                                 <span>Ampliar</span>
@@ -206,7 +264,8 @@
 
                         <article class="portfolio-card" data-category="aniversario">
                             <div class="card-image">
-                                <img src="img/foto-aniversario-03.jpeg" alt="Ensaio fotográfico aniversário 3" loading="lazy">
+                                <img src="img/foto-aniversario-03.jpeg" alt="Ensaio fotográfico aniversário 3"
+                                    loading="lazy">
                             </div>
                             <div class="card-overlay">
                                 <span>Ampliar</span>
@@ -215,7 +274,8 @@
 
                         <article class="portfolio-card" data-category="aniversario">
                             <div class="card-image">
-                                <img src="img/foto-aniversario-04.jpeg" alt="Ensaio fotográfico aniversário 4" loading="lazy">
+                                <img src="img/foto-aniversario-04.jpeg" alt="Ensaio fotográfico aniversário 4"
+                                    loading="lazy">
                             </div>
                             <div class="card-overlay">
                                 <span>Ampliar</span>
@@ -224,7 +284,8 @@
 
                         <article class="portfolio-card" data-category="aniversario">
                             <div class="card-image">
-                                <img src="img/foto-aniversario-05.jpeg" alt="Ensaio fotográfico aniversário 5" loading="lazy">
+                                <img src="img/foto-aniversario-05.jpeg" alt="Ensaio fotográfico aniversário 5"
+                                    loading="lazy">
                             </div>
                             <div class="card-overlay">
                                 <span>Ampliar</span>
@@ -233,7 +294,8 @@
 
                         <article class="portfolio-card" data-category="aniversario">
                             <div class="card-image">
-                                <img src="img/foto-aniversario-06.jpeg" alt="Ensaio fotográfico aniversário 6" loading="lazy">
+                                <img src="img/foto-aniversario-06.jpeg" alt="Ensaio fotográfico aniversário 6"
+                                    loading="lazy">
                             </div>
                             <div class="card-overlay">
                                 <span>Ampliar</span>
@@ -242,7 +304,8 @@
 
                         <article class="portfolio-card" data-category="aniversario">
                             <div class="card-image">
-                                <img src="img/foto-aniversario-07.jpeg" alt="Ensaio fotográfico aniversário 7" loading="lazy">
+                                <img src="img/foto-aniversario-07.jpeg" alt="Ensaio fotográfico aniversário 7"
+                                    loading="lazy">
                             </div>
                             <div class="card-overlay">
                                 <span>Ampliar</span>
@@ -251,7 +314,8 @@
 
                         <article class="portfolio-card" data-category="aniversario">
                             <div class="card-image">
-                                <img src="img/foto-aniversario-08.jpeg" alt="Ensaio fotográfico aniversário 8" loading="lazy">
+                                <img src="img/foto-aniversario-08.jpeg" alt="Ensaio fotográfico aniversário 8"
+                                    loading="lazy">
                             </div>
                             <div class="card-overlay">
                                 <span>Ampliar</span>
@@ -260,7 +324,8 @@
 
                         <article class="portfolio-card" data-category="aniversario">
                             <div class="card-image">
-                                <img src="img/foto-aniversario-09.jpeg" alt="Ensaio fotográfico aniversário 9" loading="lazy">
+                                <img src="img/foto-aniversario-09.jpeg" alt="Ensaio fotográfico aniversário 9"
+                                    loading="lazy">
                             </div>
                             <div class="card-overlay">
                                 <span>Ampliar</span>
@@ -334,7 +399,8 @@
                         <!-- FAMÍLIA -->
                         <article class="portfolio-card" data-category="familia">
                             <div class="card-image">
-                                <img src="img/foto-familia-01.jpeg" alt="Ensaio fotográfico de família 1" loading="lazy">
+                                <img src="img/foto-familia-01.jpeg" alt="Ensaio fotográfico de família 1"
+                                    loading="lazy">
                             </div>
                             <div class="card-overlay">
                                 <span>Ampliar</span>
@@ -343,7 +409,8 @@
 
                         <article class="portfolio-card" data-category="familia">
                             <div class="card-image">
-                                <img src="img/foto-familia-02.jpeg" alt="Ensaio fotográfico de família 2" loading="lazy">
+                                <img src="img/foto-familia-02.jpeg" alt="Ensaio fotográfico de família 2"
+                                    loading="lazy">
                             </div>
                             <div class="card-overlay">
                                 <span>Ampliar</span>
@@ -353,7 +420,8 @@
                         <!-- PROFISSIONAL -->
                         <article class="portfolio-card" data-category="profissional">
                             <div class="card-image">
-                                <img src="img/foto-profissional-01.jpeg" alt="Ensaio fotográfico profissional 1" loading="lazy">
+                                <img src="img/foto-profissional-01.jpeg" alt="Ensaio fotográfico profissional 1"
+                                    loading="lazy">
                             </div>
                             <div class="card-overlay">
                                 <span>Ampliar</span>
@@ -362,7 +430,8 @@
 
                         <article class="portfolio-card" data-category="profissional">
                             <div class="card-image">
-                                <img src="img/foto-profissional-02.jpeg" alt="Ensaio fotográfico profissional 2" loading="lazy">
+                                <img src="img/foto-profissional-02.jpeg" alt="Ensaio fotográfico profissional 2"
+                                    loading="lazy">
                             </div>
                             <div class="card-overlay">
                                 <span>Ampliar</span>
@@ -371,20 +440,21 @@
 
                         <article class="portfolio-card" data-category="profissional">
                             <div class="card-image">
-                                <img src="img/foto-profissional-03.jpeg" alt="Ensaio fotográfico profissional 3" loading="lazy">
+                                <img src="img/foto-profissional-03.jpeg" alt="Ensaio fotográfico profissional 3"
+                                    loading="lazy">
                             </div>
                             <div class="card-overlay">
                                 <span>Ampliar</span>
                             </div>
                         </article>
                     </div>
+
+                    <div class="carousel-progress" aria-hidden="true">
+                        <div class="carousel-progress-bar"></div>
+                    </div>
                 </div>
             </div>
         </section>
-
-
-        <!-- =================================================
-             COMO FUNCIONA
         ================================================== -->
 
         <section id="como-funciona" class="section-padding">
@@ -401,31 +471,36 @@
                     <div class="process-step fade-up" style="--step: 1">
                         <div class="step-number">01</div>
                         <h3>Conversa Inicial</h3>
-                        <p>Entendo sua visão, valores e objetivos. É o momento de conhecer melhor quem você é e imaginar juntos o resultado final.</p>
+                        <p>Entendo sua visão, valores e objetivos. É o momento de conhecer melhor quem você é e imaginar
+                            juntos o resultado final.</p>
                     </div>
 
                     <div class="process-step fade-up" style="--step: 2">
                         <div class="step-number">02</div>
                         <h3>Planejamento</h3>
-                        <p>Definimos data, local, estilo e todos os detalhes. Cada elemento é pensado para criar a atmosfera perfeita.</p>
+                        <p>Definimos data, local, estilo e todos os detalhes. Cada elemento é pensado para criar a
+                            atmosfera perfeita.</p>
                     </div>
 
                     <div class="process-step fade-up" style="--step: 3">
                         <div class="step-number">03</div>
                         <h3>Ensaio</h3>
-                        <p>Registro autêntico dos seus momentos. Dirijo com sensibilidade, sempre buscando a naturalidade e a verdade emocional.</p>
+                        <p>Registro autêntico dos seus momentos. Dirijo com sensibilidade, sempre buscando a
+                            naturalidade e a verdade emocional.</p>
                     </div>
 
                     <div class="process-step fade-up" style="--step: 4">
                         <div class="step-number">04</div>
                         <h3>Pós-Produção</h3>
-                        <p>Edição cuidadosa de cada imagem. Garanto consistência visual e qualidade premium em toda a galeria.</p>
+                        <p>Edição cuidadosa de cada imagem. Garanto consistência visual e qualidade premium em toda a
+                            galeria.</p>
                     </div>
 
                     <div class="process-step fade-up" style="--step: 5">
                         <div class="step-number">05</div>
                         <h3>Entrega</h3>
-                        <p>Galeria digital organizadas com as melhores imagens. Você poderá fazer downloads e compartilhar seus momentos especiais.</p>
+                        <p>Galeria digital organizadas com as melhores imagens. Você poderá fazer downloads e
+                            compartilhar seus momentos especiais.</p>
                     </div>
                 </div>
             </div>
@@ -441,7 +516,8 @@
                 <div class="manifesto-content fade-up">
                     <span class="section-label">O tempo passa</span>
                     <h2 class="huge-text">Momentos passam.<br>Memórias permanecem.</h2>
-                    <p class="manifesto-description">Cada fotografia é um portal para o passado,<br>um legado visual para o futuro.</p>
+                    <p class="manifesto-description">Cada fotografia é um portal para o passado,<br>um legado visual
+                        para o futuro.</p>
                 </div>
             </div>
         </section>
@@ -461,7 +537,8 @@
                 <h2>Vamos transformar seu<br>momento em memória?</h2>
 
                 <p class="subtitle">
-                    Se você está planejando um ensaio ou deseja registrar uma história especial, vamos conversar sobre como posso ajudar.
+                    Se você está planejando um ensaio ou deseja registrar uma história especial, vamos conversar sobre
+                    como posso ajudar.
                 </p>
 
                 <div class="cta-buttons">
@@ -472,7 +549,8 @@
                 </div>
 
                 <p class="contact-alternative">
-                    Ou envie um e-mail para <a href="mailto:contato@eduardafotografia.com">contato@eduardafotografia.com</a>
+                    Ou envie um e-mail para <a
+                        href="mailto:contato@eduardafotografia.com">contato@eduardafotografia.com</a>
                 </p>
             </div>
         </section>
@@ -497,7 +575,8 @@
                     <a href="#" class="social-icon-large whatsapp-link" title="WhatsApp">
                         <i data-feather="message-circle"></i>
                     </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon-large" title="Instagram">
+                    <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon-large"
+                        title="Instagram">
                         <i data-feather="instagram"></i>
                     </a>
                     <a href="#" class="social-icon-large" title="Pinterest">
@@ -513,8 +592,7 @@
                         <ul class="footer-links-list">
                             <li><a href="#sobre">Sobre Mim</a></li>
                             <li><a href="#como-funciona">Processo</a></li>
-                            <li><a href="#">Manifesto</a></li>
-                            <li><a href="#">Experiência</a></li>
+                            <li><a href="#manifesto">Manifesto</a></li>
                         </ul>
                     </div>
 
@@ -523,9 +601,6 @@
                         <h3 class="footer-section-title">Portfólio</h3>
                         <ul class="footer-links-list">
                             <li><a href="#portfolio">Ver Trabalhos</a></li>
-                            <li><a href="#">Ensaios</a></li>
-                            <li><a href="#">Família</a></li>
-                            <li><a href="#">Profissional</a></li>
                         </ul>
                     </div>
 
@@ -536,19 +611,8 @@
                             <li><a href="tel:+5511999999999">+55 11 9 9999-9999</a></li>
                             <li><a href="mailto:contato@eduardafotografia.com">contato@eduardafotografia.com</a></li>
                             <li><a href="#contato">Formulário</a></li>
-                            <li><a href="#">Localização</a></li>
                         </ul>
                     </div>
-                </div>
-
-                <!-- Newsletter -->
-                <div class="footer-newsletter">
-                    <h3 class="footer-newsletter-title">Newsletter</h3>
-                    <p class="footer-newsletter-text">Receba atualizações sobre ensaios e promoções exclusivas.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Seu email" class="newsletter-input" required>
-                        <button type="submit" class="newsletter-btn">Inscrever</button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -556,7 +620,8 @@
         <!-- Footer Bottom -->
         <div class="footer-bottom">
             <div class="container">
-                <p class="copyright">&copy; 2026 Eduarda Silva Fotografia. Todos os direitos reservados. | Belém, Pará</p>
+                <p class="copyright">&copy; 2026 Eduarda Silva Fotografia. Todos os direitos reservados. | Belém, Pará
+                </p>
             </div>
         </div>
     </footer>
@@ -588,12 +653,9 @@
 
 
     <script src="js/main.js"></script>
-    
+
     <!-- Feather Icons Script -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script>
-        feather.replace();
-    </script>
 
 </body>
 
